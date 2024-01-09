@@ -926,10 +926,10 @@ class PuppetXp extends PUPPET.Puppet {
   ): Promise<void> {
     log.verbose('PuppetXp', 'messageSendUrl(%s, %s)', conversationId, contactId)
 
-    this.notSupported('SendContact')
+    //this.notSupported('SendContact')
 
-    // const contact = this.mocker.MockContact.load(contactId)
-    // return this.messageSend(conversationId, contact)
+    const contact = this.mocker.MockContact.load(contactId)
+    return this.messageSend(conversationId, contact)
   }
 
   override async messageSendUrl (
